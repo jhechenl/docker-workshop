@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "0bf7e9ee-fa72-4e05-9fda-8f14574c9739",
+		"name": "docker-workshop-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "3865228"
+	},
+	"item": [
+		{
+			"name": "cats",
+			"item": [
+				{
+					"name": "Find all cats",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cats",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create cat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gatblac\",\r\n    \"age\": 5,\r\n    \"breed\": \"Nose\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/cats",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cats"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Find one cat",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/cats/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cats",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63652bbc5ae48c6d79bc79db"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update cat",
+					"request": {
+						"method": "PATCH",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gatblac \",\r\n    \"age\": 6,\r\n    \"breed\": \"Nose\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/cats/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cats",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63652bbc5ae48c6d79bc79db"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete cat",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"Gatblac \",\r\n    \"age\": 6,\r\n    \"breed\": \"Nose\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{apiUrl}}/cats/:id",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"cats",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "63652bbc5ae48c6d79bc79db"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "apiUrl",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	]
+}

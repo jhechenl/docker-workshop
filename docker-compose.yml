@@ -1,0 +1,33 @@
+services:    
+    workshop-api:
+        container_name: workshop-api
+        build:
+            context: workshop-api
+            dockerfile: Dockerfile
+        ports:
+            - "3000:3000"                                     
+        logging:
+            driver: json-file        
+        restart: on-failure
+    workshop-web:
+        container_name: workshop-web
+        build:
+            context: workshop-web
+            dockerfile: Dockerfile
+        ports:
+            - "8080:80"                                     
+        logging:
+            driver: json-file
+        restart: on-failure
+    workshop-mongodb:
+        container_name: workshop-mongodb
+        image: mongo:5.0.6
+        volumes:
+            - workshop-mongodb:/data/db
+        ports:
+            - "27117:27017" 
+       
+volumes:
+    workshop-mongodb:
+        driver: local
+   
